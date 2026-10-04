@@ -1,0 +1,55 @@
+@import "tailwindcss";
+
+@theme {
+	--font-sans:
+		Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+	--color-background: #f5f6fa;
+	--color-foreground: #24252d;
+	--color-accent: #6654e8;
+	--color-accent-hover: #5844d6;
+	--color-accent-soft: #f1edfd;
+	--color-muted: #81818e;
+	--color-subtle: #a49aac;
+	--color-stroke: #eeedf3;
+	--color-chat-background: #f7f6fb;
+	--color-message-outgoing: #e9e2fd;
+	--color-error: #b55454;
+	--color-error-background: #fce7e7;
+	--color-warning: #d5a74c;
+	--color-warning-background: #fff2da;
+	--color-success: #57b988;
+}
+
+@layer base {
+	html {
+		@apply bg-background font-sans text-foreground antialiased;
+		font-synthesis: none;
+		text-rendering: optimizeLegibility;
+	}
+
+	body {
+		@apply min-w-80;
+	}
+
+	button {
+		@apply cursor-pointer transition-[background,opacity] duration-150;
+	}
+
+	button:disabled {
+		@apply cursor-default opacity-50;
+	}
+
+	button:focus-visible,
+	a:focus-visible {
+		@apply outline-3 outline-offset-3 outline-accent/50;
+	}
+
+	a {
+		@apply text-accent hover:underline;
+	}
+
+	input::placeholder,
+	textarea::placeholder {
+		@apply text-subtle;
+	}
+}
